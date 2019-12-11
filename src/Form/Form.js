@@ -5,19 +5,37 @@ class Form extends Component {
     super()
 
     this.state = {
-      title: '',
-      description: ''
+      name: '',
+      date: '',
+      time: '',
+      number: null
     }
   }
 
   render() {
     return (
-      <>
-      <input 
-        placeholder=''
-        name='title'
-      />
-      </>
+      <section>
+        <input 
+          placeholder='Name'
+          name='name'
+          value={this.state.name}
+        />
+        <input 
+          placeholder='Date'
+          name='date'
+          value={this.state.date}
+        />
+        <input 
+          placeholder='time'
+          name='time'
+          value={this.state.time}
+        />
+        <input 
+          placeholder='Number of Guests'
+          name='number'
+          value={this.state.number}
+        />
+      </section>
     )
   }
 }
