@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ReservationsContainer from '../ReservationsContainer/ReservationsContainer'
 import Form from '../Form/Form'
-import { getReservations } from '../apiCalls'
+import { getReservations, postReservation } from '../apiCalls'
 class App extends Component {
   constructor() {
     super() 
@@ -14,10 +14,16 @@ class App extends Component {
   componentDidMount() {
     getReservations()
       .then(reservations => this.setState({ reservations }))
+      .catch(err => console.log(err))
   }
 
   addReservation = (newReservation) => {
-    this.setState({reservations: [...this.state.reservations, newReservation]})
+    postReservation(newReservation)
+      .then(reservation => {
+        this.setState({reservations: [...this.state.reservations, reservation]})
+      })
+      .catch(err => console.log(err))
+   
   }
   
   render() {
