@@ -24,3 +24,22 @@ export const postReservation = (newReservation) => {
       }
       return res.json()})
 }
+
+export const cancelReservation = (id) => {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return fetch(`http://localhost:3001/api/v1/reservations/${id}`, options)
+    .then(res => {
+      if(!res.ok) {
+        throw Error('Something is not right, try again later')
+      }
+      return res.json()
+    }).catch(error => {
+      throw Error(error.message)
+    });
+}
