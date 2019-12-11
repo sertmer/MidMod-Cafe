@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ReservationsContainer from '../ReservationsContainer/ReservationsContainer'
 import Form from '../Form/Form'
-import { getReservations, postReservation } from '../apiCalls'
+import { getReservations, postReservation, cancelReservation } from '../apiCalls'
 class App extends Component {
   constructor() {
     super() 
@@ -25,6 +25,12 @@ class App extends Component {
       .catch(err => console.log(err))
    
   }
+
+  removeReservation = (id) => {
+    cancelReservation(id)
+      .then(activeReservations => this.setState({reservations: activeReservations}))
+      .catch(err => console.log(err))
+  }
   
   render() {
     return (
@@ -38,6 +44,7 @@ class App extends Component {
         <div className='resy-container'>
           <ReservationsContainer 
             reservations={this.state.reservations}
+            removeReservation={this.removeReservation}
           />
         </div>
       </div>
