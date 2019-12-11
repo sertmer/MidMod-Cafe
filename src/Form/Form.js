@@ -25,6 +25,7 @@ class Form extends Component {
     return (
       <section>
         <input 
+          className="name-input"
           placeholder='Name'
           name='name'
           value={this.state.name}
