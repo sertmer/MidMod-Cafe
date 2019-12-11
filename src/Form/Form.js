@@ -9,6 +9,17 @@ class Form extends Component {
       description: ''
     }
   }
+
+  render() {
+    return (
+      <>
+      <input 
+        placeholder=''
+        name='title'
+      />
+      </>
+    )
+  }
 }
 
 export default Form
