@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReservationsContainer should match the snapshot 1`] = `
+<div>
+  <ReservationsCard
+    date="12/29"
+    id={1}
+    key="1"
+    name="Christie"
+    number={12}
+    removeReservation={[Function]}
+    time="7:00"
+  />
+</div>
+`;
