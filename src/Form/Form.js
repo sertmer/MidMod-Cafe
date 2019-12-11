@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       name: '',
@@ -49,7 +49,10 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button>Submit, why dontcha?</button>
+        <button 
+          onClick={() => this.props.addReservation(this.state)}>
+          Submit, why dontcha?
+        </button>
       </section>
     )
   }
