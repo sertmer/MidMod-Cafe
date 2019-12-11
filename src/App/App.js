@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-
-
+import ReservationsContainer from '../ReservationsContainer'
 class App extends Component {
+  constructor() {
+    super() 
+
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <div className="App">
