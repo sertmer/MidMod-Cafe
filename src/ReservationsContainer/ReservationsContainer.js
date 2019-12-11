@@ -1,4 +1,5 @@
 import React from 'react'
+import './ReservationsContainer.css'
 import ReservationsCard from '../ReservationsCard/ReservationsCard'
 
 const ReservationsContainer = ({ reservations }) => {
