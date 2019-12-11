@@ -8,12 +8,13 @@ class App extends Component {
     super() 
 
     this.state = {
-
+      reservations: []
     }
   }
 
   componentDidMount() {
     getReservations()
+      .then(reservations => this.setState({ reservations }))
   }
   
   render() {
@@ -24,7 +25,9 @@ class App extends Component {
         <Form />
         </div>
         <div className='resy-container'>
-          <ReservationsContainer />
+          <ReservationsContainer 
+            reservations={this.state.reservations}
+          />
         </div>
       </div>
     )
